@@ -1,0 +1,17 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<h1>this is our most beautiful audio upload form but uplaoding here is strictly prohibited ..dont do any thing here kindly ... </h1>
+<p>regards fyp members</p>
+<form class="upload-form" action="{% url 'upload_audio' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <!--<input type="file" name="audio_file" id="id_audio_file">-->
+    <button type="submit">Upload</button>
+</form>
+{% endblock %}
+
+
